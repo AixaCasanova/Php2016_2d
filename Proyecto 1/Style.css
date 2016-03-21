@@ -2,7 +2,7 @@
 .basic-grey {
     margin-left:auto;
     margin-right:auto;
-    max-width: 500px;
+    max-width: 1000px;
     background: #F7F7F7;
     padding: 25px 15px 25px 10px;
     font: 12px Georgia, "Times New Roman", Times, serif;
@@ -51,6 +51,23 @@
     -moz-box-shadow: inset 0px 1px 4px #ECECEC;
     -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
 }
+.basic-grey input[type="number"], .basic-grey input[type="number"], .basic-grey textarea, .basic-grey select {
+    border: 1px solid #DADADA;
+    color: #888;
+    height: 30px;
+    margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 2px;
+    outline: 0 none;
+    padding: 3px 3px 3px 5px;
+    width: 70%;
+    font-size: 12px;
+    line-height:15px;
+    box-shadow: inset 0px 1px 4px #ECECEC;
+    -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+    -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+    max-width: 90px;
+}
 .basic-grey textarea{
     padding: 5px 3px 3px 5px;
 }
@@ -65,6 +82,7 @@
     width: 70%;
     height: 35px;
     line-height: 25px;
+    max-width: 100px;
 }
 .basic-grey textarea{
     height:100px;
