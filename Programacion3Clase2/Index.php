@@ -5,6 +5,12 @@
 <body>
 
 <?php
+//nota= poner carpeta en htdocs, un nivel menos!!
+
+//include_once "Alumno.php";   // para incluya el archivo alumno.php, sus atributos y metodos / es para que lo incluya una sola vez
+require "Alumno.php";  // incluye todo el archivo
+//include "mascota.php";  //solo warning y deja seguir
+//require "mascota.php"; // fatal error
 
 echo "Hola";
 
@@ -65,29 +71,7 @@ $MiObjeto->Productos=$MiNuevoArray;
 var_dump($MiObjeto);
 echo "<br>";
 
-	 class Alumno
-	{	
-		public $Nombre;
-		public $Apellido;
-
-		public function Mostrar()
-		{
-		$this->RetornarDatos();
-		}
-
-		private function RetornarDatos()
-		{
-			echo "<br>";
-			echo "Su nombre es: ".$this->Nombre."<br>";
-			echo "Su Apellido es: ".$this->Apellido."<br>";
-		}
-
-		public static function MostrarEstaticos($alumno)
-		 {
-		 	$alumno->Mostrar();
-		 }
-
-	}
+	
 
 $yo = new Alumno();
 $yo->Nombre="Aixa";
@@ -99,6 +83,20 @@ echo "<br>";
 
 Alumno::MostrarEstaticos($yo);  //metodo de clase/estaticos --> con ::
 $yo->Soltero=true; //se agrega un atributo dinamicamente
+
+echo "<br>";
+echo $yo->Nombre;
+
+echo "<br>-----------<br>";
+		
+		foreach ($yo as $atributo) 
+		{
+		var_dump($atributo);	
+		echo "<br>";
+		}
+
+//echo $yo[$Nombre]; --> no se puede usar un objeto como si fuera un array!
+
 
 
 
