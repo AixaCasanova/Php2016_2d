@@ -14,6 +14,9 @@ if ($nombre == "Admin" && $clave =="1234") {
 	//include_once("Bienvenido.html");
 	include("Bienvenido.html");
 	//require("Bienvenido.html");
+}else
+{
+	include("NoLogueado.html");
 }
 
 ?>
