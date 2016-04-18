@@ -13,39 +13,15 @@ include_once "persona.php";
 	<head>
 		<title>Datos de persona</title>
 		<script type="text/javascript" src="Funciones.js">
-		function ValidarCadena(cadenaAValidar)
-		{
-			alert("ingreso ValidarCadena");
-			if (cadenaAValidar == null || cadenaAValidar == "") 
-			{
-				return false;
-			}
-			else
-			{
-				return true
-			}
-		}
-		function EnviarDatos()
-		{
-			alert("ingreso");
-			var cadAlert;
-
-    		if(ValidarCadena(document.getElementById("Nombre")==false){cadAlert = cadAlert + "El Nombre es requerido  \n"}
-			if(ValidarCadena(document.getElementById("Apellido")==false){cadAlert = cadAlert + "El Apellido es requerido  \n"}
-			if(ValidarCadena(document.getElementById("Sexo")==false){cadAlert = cadAlert + "El Sexo es requerido  \n"}
-			if(ValidarCadena(document.getElementById("Dni")==false){cadAlert = cadAlert + "El Dni es requerido  \n"}
-			if(ValidarCadena(document.getElementById("Legajo")==false){cadAlert = cadAlert + "El Legajo es requerido  \n"}
-			if(ValidarCadena(document.getElementById("Sueldo")==false){cadAlert = cadAlert + "El Sueldo es requerido \n"}
-			 
-	 		alert(cadAlert);
-}</script>
+		
+</script>
 		<h2>Ingrese persona:</h2>
 	</head>
 
 	<body>
 		<form action="administracion.php" method="post" enctype="multipart/form-data">
 			<br> 
-			<input type="text" id="Nombre" name="Nombre" placeholder="Nombre">
+		 <input type="text" id="Nombre" name="Nombre" placeholder="Nombre">   <span id='Nom' style='display:none' >  </span>
 			<br><br> 
 			<input type="text" id="Apellido" name="Apellido" placeholder="Apellido">
 			<br><br> 
@@ -61,7 +37,10 @@ include_once "persona.php";
 			<input type="file" id="FotoEmpleado" name="FotoEmpleado">
             <br><br>
 			<input type="submit" name="SGuardar" value="Guardar" OnClick="EnviarDatos()">
+
 		</form>
+		<button OnClick="EnviarDatos()"> Validar</button>
+		
 	</body>
 
 </html>
