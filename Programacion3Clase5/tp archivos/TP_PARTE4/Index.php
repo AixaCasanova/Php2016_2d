@@ -52,11 +52,11 @@ include_once "persona.php";
 		<!-- 	<select name="Sexo"><option value="F">F</option><option value="M">M</option></select> -->
 			<input type="text" id="Sexo" name="Sexo" placeholder="Sexo">
 			<br><br> 
-			<input type="text" id="Dni" name="Dni" placeholder="Dni">
+			<input type="text" id="Dni" name="Dni" placeholder="Dni" OnKeyPress="ValidarNumero()">
 			<br><br> 
-			<input type="text" id="Legajo" name="Legajo" placeholder="Legajo">
+			<input type="text" id="Legajo" name="Legajo" placeholder="Legajo" OnKeyPress="ValidarNumero()">
 			<br><br> 
-			<input type="text" id="Sueldo" name="Sueldo" placeholder="Sueldo">
+			<input type="text" id="Sueldo" name="Sueldo" placeholder="Sueldo" OnKeyPress="ValidarNumero()">
 			<br><br> 
 			<input type="file" id="FotoEmpleado" name="FotoEmpleado">
             <br><br>

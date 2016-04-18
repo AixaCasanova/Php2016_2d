@@ -27,10 +27,20 @@ class fabrica
 	{}
 
 	public function EliminarEmpleado($persona)
-	{}
+	{
+		   unset($_empleados[$per]);
+	}
 
 	public function EliminarEmpleadoRepetido()
-	{}
+	{
+	   //array_unique($this->_empleados);
+	}
+
+	public function AgregarEmpleado($per)
+	{
+		array_push($this->_empleados, $per);
+		$this->EliminarEmpleadoRepetidos();
+	}
 
 	public function ToString()
 	{
@@ -41,6 +51,48 @@ class fabrica
 		}
 
 		return GetRazonSocial()."-".$listaemp;
+	}
+
+	public static function ObtenerEmpleadosTxt()
+	{
+		$op = fopen("empleados.txt", "r");
+		while(!feof($op))
+		{
+
+			$RENGLON = fgets($op);
+			$arrayUnEmpleado = explode("-", $RENGLON);
+		 
+			for ($i=0; $i < count($arrayUnEmpleado)  ; $i++) { 
+				# code...
+				if ($arrayUnEmpleado[$i] !=  null ) {
+				$empleado = new empleado($arrayUnEmpleado[0],$arrayUnEmpleado[1], $arrayUnEmpleado[2],$arrayUnEmpleado[3] , $arrayUnEmpleado[4], $arrayUnEmpleado[5] );
+				
+				} 
+			}
+			 if ($RENGLON !=null || $RENGLON != "") {
+ 	 
+ 			AgregarEmpleado($empleado);
+
+			}
+			
+			
+		}
+	}
+
+	public function guardar($fabrica)
+	{
+		$archivo=fopen("empleados.txt", "a");  
+	
+		if(fwrite($archivo, $fabrica->ToString()."\r\n"))
+		{   
+			fclose($archivo);  
+			return true;
+		}else{return false;}
+	}
+
+	public function ToArray()
+	{
+		return GetEmpleados();
 	}
 
 }
